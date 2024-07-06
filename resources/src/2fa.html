@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High-High &mdash; Sign-up</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="flex h-full flex-col gap-10">
+        <div class="flex w-full items-center justify-between px-4 py-6">
+          <img src="./assets/images/logo.svg" class="h-10" alt="" />
+
+          <a href="./login.html" class="btn btn--outline btn--sm">العربية</a>
+        </div>
+
+        <div class="container flex flex-1 flex-col justify-center">
+          <div class="mx-auto w-full max-w-[360px] text-center">
+            <p class="mb-8 text-lg">تفعيل المصادقة الثنائية</p>
+
+            <div class="space-y-4">
+              <a href="./otp.html" class="twofa-box">
+                <img
+                  src="./assets/images/icons/conversation.svg"
+                  class="twofa-box__icon"
+                  alt=""
+                />
+
+                <div class="twofa-box__content">
+                  <p>رسالة نصية</p>
+                  <p>+213 559228881</p>
+                </div>
+
+                <svg class="twofa-box__arrow">
+                  <use
+                    href="./assets/images/icons/sprite.svg#arrow-nonline"
+                  ></use>
+                </svg>
+              </a>
+
+              <a href="./2fa-qr.html" class="twofa-box">
+                <img
+                  src="./assets/images/icons/google2fa.svg"
+                  class="twofa-box__icon"
+                  alt=""
+                />
+
+                <div class="twofa-box__content">
+                  <p>تطبيق المصادقة الثنائية</p>
+                  <p>ستجد الكود داخل التطبيق</p>
+                </div>
+
+                <svg class="twofa-box__arrow">
+                  <use
+                    href="./assets/images/icons/sprite.svg#arrow-nonline"
+                  ></use>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="">
+          <p class="text-gray mb-8 text-center text-xs">
+            لديك حساب بالفعل ؟
+            <a href="./login.html" class="font-semibold text-primary"
+              >تسجيل الدخول</a
+            >
+          </p>
+
+          <div class="border-black-100 border-t py-4">
+            <div
+              class="container flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+            >
+              <p class="text-gray max-md:text-center">
+                جميع الحقوق محفوظة لRQM SoLUTION 2024
+              </p>
+
+              <div class="flex items-center gap-4">
+                <a
+                  href="./login.html"
+                  class="btn btn--outline btn--sm max-md:flex-1"
+                  >الغاء</a
+                >
+                <a
+                  href="./sign-up.html"
+                  class="btn btn--black btn--sm max-md:flex-1"
+                  >قبول الكل</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

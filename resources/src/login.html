@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High-High &mdash; Login</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="flex h-full flex-col gap-10">
+        <div class="flex w-full items-center justify-between px-4 py-6">
+          <img src="./assets/images/logo.svg" class="h-10" alt="" />
+
+          <a href="./login.html" class="btn btn--outline btn--sm">العربية</a>
+        </div>
+
+        <div class="container flex flex-1 flex-col justify-center">
+          <header class="mb-6 text-center">
+            <h1 class="mb-4 text-sm font-bold md:text-base lg:text-xl">
+              تسجيل الدخول
+            </h1>
+          </header>
+
+          <form action="./check-email.html" class="form mb-6">
+            <div>
+              <div class="mb-6 flex items-center gap-6">
+                <label class="form__radio">
+                  <input
+                    type="radio"
+                    name="loginWith"
+                    id="loginWithPhoneInput"
+                    value="phone"
+                    autocomplete="off"
+                  />
+                  رقم الهاتف
+                </label>
+                <label class="form__radio">
+                  <input
+                    type="radio"
+                    name="loginWith"
+                    id="loginWithEmailInput"
+                    value="email"
+                    autocomplete="off"
+                    checked
+                  />
+                  الايميل
+                </label>
+              </div>
+
+              <div id="loginWithEmail" class="form__group">
+                <div class="form__field">
+                  <label class="form__label" for="email"
+                    >البريد الالكتروني</label
+                  >
+                  <input id="email" class="form__input" type="email" />
+                </div>
+
+                <div class="form__field">
+                  <label class="form__label" for="password">كلمة المرور</label>
+                  <input id="password" class="form__input" type="password" />
+                </div>
+              </div>
+
+              <div id="loginWithPhone" class="mb-24 hidden">
+                <div class="form__field">
+                  <label class="form__label" for="tel"
+                    >رقم الهاتف <span>*</span></label
+                  >
+                  <div class="flex items-center gap-2">
+                    <input id="tel" class="form__input flex-1" type="tel" />
+
+                    <div class="country-select max-w-28">
+                      <!-- countries will be add using javascript ⬇ -->
+                      <select class="" id="countrySelect" name="code"></select>
+                      <img
+                        src="https://flagcdn.com/w320/ng.png"
+                        id="selectedFlag"
+                        alt="Selected Flag"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form__field">
+              <label class="form__label" for="tel"
+                >الرمز المرئي <span>*</span></label
+              >
+              <div
+                class="g-recaptcha"
+                data-sitekey="your_site_key"
+                data-size="600"
+              ></div>
+            </div>
+
+            <label class="form__checkbox" for="terms-checkbox">
+              <input type="checkbox" id="terms-checkbox" />
+              <span></span>
+              الموافقة على اتفاقية الاستخدام</label
+            >
+
+            <div class="form__group">
+              <button
+                class="btn btn--black btn--md w-full font-bold"
+                type="submit"
+              >
+                تسجيل الدخول
+              </button>
+
+              <a
+                href="#"
+                class="btn btn--md btn--transparent w-full font-bold"
+                type="submit"
+              >
+                <svg class="arrow">
+                  <use href="./assets/images/icons/sprite.svg#arrow-line"></use>
+                </svg>
+                عودة للخلف
+              </a>
+            </div>
+          </form>
+
+          <p class="text-gray text-center text-xs">
+            لديك حساب بالفعل ؟
+            <a href="./login.html" class="font-semibold text-primary"
+              >تسجيل الدخول</a
+            >
+          </p>
+        </div>
+
+        <div class="border-black-100 border-t py-4">
+          <div
+            class="container flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+          >
+            <p class="text-gray max-md:text-center">
+              جميع الحقوق محفوظة لRQM SoLUTION 2024
+            </p>
+
+            <div class="flex items-center gap-4">
+              <a
+                href="./login.html"
+                class="btn btn--outline btn--sm max-md:flex-1"
+                >الغاء</a
+              >
+              <a
+                href="./sign-up.html"
+                class="btn btn--black btn--sm max-md:flex-1"
+                >قبول الكل</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <script>
+      // Get the radio inputs
+      const loginWithPhoneRadio = document.getElementById(
+        "loginWithPhoneInput",
+      );
+      const loginWithEmailRadio = document.getElementById(
+        "loginWithEmailInput",
+      );
+
+      // Get the sections to toggle
+      const loginWithEmailSection = document.getElementById("loginWithEmail");
+      const loginWithPhoneSection = document.getElementById("loginWithPhone");
+
+      // Add event listener to the radio inputs
+      loginWithPhoneRadio.addEventListener("change", toggleLoginSection);
+      loginWithEmailRadio.addEventListener("change", toggleLoginSection);
+
+      // Function to toggle the login sections
+      function toggleLoginSection(e) {
+        const { value } = e.target;
+        // Hide both sections initially
+        loginWithEmailSection.classList.add("hidden");
+        loginWithPhoneSection.classList.add("hidden");
+
+        // Show the selected section
+        if (value === "phone") {
+          loginWithPhoneSection.classList.remove("hidden");
+        } else if (value === "email") {
+          loginWithEmailSection.classList.remove("hidden");
+        }
+      }
+    </script>
+    <script>
+      const selectElement = document.getElementById("countrySelect");
+      const selectedFlagImg = document.getElementById("selectedFlag");
+
+      const countries = [
+        {
+          name: "Algeria",
+          code: "+213",
+          flag: "https://flagcdn.com/w320/dz.png",
+        },
+        {
+          name: "Bahrain",
+          code: "+973",
+          flag: "https://flagcdn.com/w320/bh.png",
+        },
+        { name: "Iraq", code: "+964", flag: "https://flagcdn.com/w320/iq.png" },
+        // Add more countries as needed
+      ];
+
+      const countrySelect = document.getElementById("countrySelect");
+
+      countries.forEach((country) => {
+        const option = document.createElement("option");
+        option.value = country.code;
+        option.setAttribute("data-flag", country.flag);
+        option.textContent = `(${country.code})`;
+        selectElement.appendChild(option);
+      });
+
+      // Function to update the flag icon
+      function updateFlagIcon() {
+        const selectedOption =
+          selectElement.options[selectElement.selectedIndex];
+        const flagUrl = selectedOption.getAttribute("data-flag");
+        selectedFlagImg.src = flagUrl;
+      }
+
+      // Event Listener for select element change
+      selectElement.addEventListener("change", updateFlagIcon);
+
+      // Initial flag update (in case a default is set)
+      updateFlagIcon();
+    </script>
+  </body>
+</html>

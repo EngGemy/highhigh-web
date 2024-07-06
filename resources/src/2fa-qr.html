@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>High-High &mdash; Sign-up</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/styles/main.css" />
+  </head>
+
+  <body>
+    <div id="app">
+      <div class="flex h-full flex-col gap-10">
+        <div class="flex w-full items-center justify-between px-4 py-6">
+          <img src="./assets/images/logo.svg" class="h-10" alt="" />
+
+          <a href="./login.html" class="btn btn--outline btn--sm">العربية</a>
+        </div>
+
+        <div class="container flex flex-1 flex-col justify-center">
+          <div class="mx-auto w-full max-w-[680px]">
+            <div class="mb-10 flex flex-col gap-6 lg:flex-row lg:gap-8">
+              <div class="w-full">
+                <img
+                  src="./assets/images/illustrations/security.png"
+                  class="mx-auto max-w-[260px] lg:max-w-[350px]"
+                  alt=""
+                />
+              </div>
+
+              <!-- <hr class="border-black" /> -->
+              <div class="bg-black max-lg:h-px lg:w-px"></div>
+
+              <div>
+                <p class="mb-8">قم بمسح الكود من هاتفك</p>
+
+                <img
+                  src="./assets/images/illustrations/qr-code.png"
+                  class="mx-auto mb-6 w-48 lg:mx-0"
+                  alt=""
+                />
+
+                <form action="">
+                  <div class="form__field">
+                    <label for="code" class="form__label text-blue"
+                      >او قم بادخال الكود بشكل يدوي</label
+                    >
+
+                    <input type="text" class="form__input" id="code" />
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <a
+              href="#"
+              class="btn btn--md btn--transparent w-full font-bold"
+              type="submit"
+            >
+              <svg class="arrow">
+                <use href="./assets/images/icons/sprite.svg#arrow-line"></use>
+              </svg>
+              عودة للخلف
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <p class="text-gray mb-8 text-center text-xs">
+            لديك حساب بالفعل ؟
+            <a href="./login.html" class="font-semibold text-primary"
+              >تسجيل الدخول</a
+            >
+          </p>
+
+          <div class="border-black-100 border-t py-4">
+            <div
+              class="container flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between"
+            >
+              <p class="text-gray max-md:text-center">
+                جميع الحقوق محفوظة لRQM SoLUTION 2024
+              </p>
+
+              <div class="flex items-center gap-4">
+                <a
+                  href="./login.html"
+                  class="btn btn--outline btn--sm max-md:flex-1"
+                  >الغاء</a
+                >
+                <a
+                  href="./sign-up.html"
+                  class="btn btn--black btn--sm max-md:flex-1"
+                  >قبول الكل</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
